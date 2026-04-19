@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, "Inter", sans-serif;
+  --font-display: "Georgia", serif;
+  
+  --color-bg: #050608;
+  --color-accent: #e2b07e;
+  --color-text: #f0f0f0;
+  --color-glass: rgba(255, 255, 255, 0.03);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  @apply bg-bg text-text antialiased selection:bg-accent/30 min-h-screen;
+  font-family: var(--font-sans);
+}
+
+.background-immersive {
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(226, 176, 126, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 10% 80%, rgba(56, 82, 114, 0.15) 0%, transparent 50%),
+    linear-gradient(180deg, #050608 0%, #1a1c22 100%);
+}
+
+.glass {
+  @apply bg-glass backdrop-blur-[10px] border border-glass-border;
+}
+
+.serif-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+.rail-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.btn-accent {
+  @apply bg-accent text-black font-bold uppercase tracking-widest px-6 py-4 rounded-sm transition-all hover:bg-accent/90 focus:ring-2 focus:ring-accent/50;
+  font-size: 11px;
+}
+
+.tag-accent {
+  @apply text-accent uppercase tracking-[0.4em] text-[10px] font-bold;
+}
